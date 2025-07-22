@@ -26,10 +26,17 @@ a{
     color: beige;
 }
 div{
-    display: inline;
+    display: flex;
+    justify-content: center;
 }
 img{
-    height: 300px;
+    transition: 1s;
+    width: 300px;
     margin-left: 15px;
     border-radius: 10px;
+    height: 300px;
+}
+img:hover{
+    transition: 1s;
+    width: calc(100% - 1200px);
 }
