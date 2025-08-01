@@ -38,26 +38,42 @@ const fonts = [
 ];
 
 
-function RandomFontText({ children }) {
+const RandomFontText = ({ children }) => {
   const str = typeof children === 'string' ? children : String(children);
-  const [letterFonts, setLetterFonts] = useState(() =>
-    Array.from(str).map(() => fonts[Math.floor(Math.random() * fonts.length)])
-  );
+  const [typedText, setTypedText] = useState("");
+  const [letterFonts, setLetterFonts] = useState([]);
+  const [finishedTyping, setFinishedTyping] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      setTypedText(str.slice(0, i + 1));
+      i++;
+      if (i === str.length) {
+        clearInterval(typingInterval);
+        setFinishedTyping(true);
+      }
+    }, 100);
+    return () => clearInterval(typingInterval);
+  }, [str]);
+
+  useEffect(() => {
+    if (!finishedTyping) return;
+    const fontInterval = setInterval(() => {
       setLetterFonts(Array.from(str).map(() => fonts[Math.floor(Math.random() * fonts.length)]));
     }, 250);
-    return () => clearInterval(interval);
-  }, [str]);
+    return () => clearInterval(fontInterval);
+  }, [finishedTyping, str]);
 
   return (
     <span>
-      {Array.from(str).map((char, i) => (
-        <span key={i} className={letterFonts[i]}>{char}</span>
+      {Array.from(typedText).map((char, i) => (
+        <span key={i} className={finishedTyping ? letterFonts[i] : ""}>
+          {char}
+        </span>
       ))}
     </span>
   );
-}
+};
 
 export default RandomFontText;
