@@ -50,7 +50,7 @@ const RandomFonts = ({ children }) => {
     };
 
     updateFonts(); // initial run
-    const interval = setInterval(updateFonts, 100); // change every 500ms
+    const interval = setInterval(updateFonts, 200); // change every 500ms
 
     return () => clearInterval(interval);
   }, [children]);
