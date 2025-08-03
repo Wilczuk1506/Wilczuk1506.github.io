@@ -1,36 +1,41 @@
+import AboutMe from "./Sections/AboutMe";
 import Home from "./Sections/Home";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const App = () => {
 
   useEffect(() => {
     const container = document.querySelector("main");
 
-    let scrollTimeout;
-    container.addEventListener("wheel", (e) => {
-      e.preventDefault();
-      clearTimeout(scrollTimeout);
+    const handleWheel = (e) => {
+      // Detect if it's a mouse wheel (not touchpad)
+      const isMouse = Math.abs(e.deltaY) >= 100;
 
-      container.scrollBy({
-        top: e.deltaY,
-        behavior: "smooth",
-      });
+      if (isMouse) {
+        e.preventDefault();
+        container.scrollBy({
+          top: e.deltaY,
+          behavior: "smooth",
+        });
+      }
+      // If it's a touchpad, let the browser handle it naturally
+    };
 
-      // Optional: throttle scroll events
-      scrollTimeout = setTimeout(() => { }, 100);
-    }, { passive: false });
+    container.addEventListener("wheel", handleWheel, { passive: false });
 
-    return () => container.removeEventListener("wheel", () => { });
+    return () => container.removeEventListener("wheel", handleWheel);
   }, []);
 
-
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <main className="h-screen overflow-y-scroll font-mono text-white snap-y snap-mandatory no-scrollbar libertinus-sans-regular">
-      <Home />
-      <section className="h-screen snap-start bg-emerald-500">Section 2</section>
-      <section className="h-screen snap-start bg-fuchsia-500">Section 3</section>
-      <section className="h-screen border-orange-500 snap-start">Section 4</section>
+      <Home refs={{ aboutMe: aboutRef, projects: projectsRef, contact: contactRef}} />
+      <AboutMe sectionRef={aboutRef}/>
+      <section ref={projectsRef} className="h-screen snap-start bg-fuchsia-500">Section 3</section>
+      <section ref={contactRef} className="h-screen border-orange-500 snap-start">Section 4</section>
     </main>
   );
 }
