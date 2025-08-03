@@ -16,13 +16,13 @@ const App = () => {
           {typingDone && <RandomFontText>I'm Wilczuk</RandomFontText>}
         </header>
         <nav className="flex flex-row justify-center border-4 border-gray-800 rounded-full overflow-hidden mx-auto w-[52vw] h-24">
-          <div className="group transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-200 ease-in-out">
+          <div className="group transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out">
             <span className="group-hover:tracking-[0.5em] transition-all duration-1000 inline-block transform -skew-x-[20deg] text-3xl tracking-widest -translate-y-1 pl-8">About</span>
           </div>
-          <div className="group transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-200 ease-in-out border-l-4 border-r-4 border-gray-800">
+          <div className="group transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out border-l-4 border-r-4 border-gray-800">
             <span className="group-hover:tracking-[0.5em] transition-all duration-1000 inline-block transform -skew-x-[20deg] text-3xl tracking-widest -translate-y-1">Projects</span>
           </div>
-          <div className="group transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-200 ease-in-out">
+          <div className="group transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out">
             <span className="group-hover:tracking-[0.5em] transition-all duration-1000 inline-block transform -skew-x-[20deg] text-3xl tracking-widest -translate-y-1 pr-8">Contact</span>
           </div>
         </nav>
