@@ -37,8 +37,7 @@ const fonts = [
   "font-['Papyrus']",
 ];
 
-
-const RandomFontText = ({ children }) => {
+const TypingRandomText = ({ children }) => {
   const str = typeof children === 'string' ? children : String(children);
   const [typedText, setTypedText] = useState("");
   const [letterFonts, setLetterFonts] = useState([]);
@@ -76,4 +75,4 @@ const RandomFontText = ({ children }) => {
   );
 };
 
-export default RandomFontText;
+export default TypingRandomText;
