@@ -21,18 +21,18 @@ const Home = ({ refs }) => {
                 <br />
                 {typingDone && <TypingRandomText>I'm Wilczuk</TypingRandomText>}
             </header>
-            <nav className="flex flex-row justify-center border-4 border-gray-800 rounded-full overflow-hidden mx-auto h-24">
-                <div onClick={() => scrollTo(refs.aboutMe)} onMouseEnter={() => setAbout(true)} onMouseLeave={() => setAbout(false)} className="transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-50 h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out">
+            <nav className="flex flex-row justify-center border-4 border-gray-800 rounded-full overflow-hidden mx-auto w-[52vw] h-24">
+                <div onClick={() => scrollTo(refs.aboutMe)} onMouseEnter={() => setAbout(true)} onMouseLeave={() => setAbout(false)} className="transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out">
                     <span className="inline-block transform -skew-x-[20deg] text-3xl tracking-widest -translate-y-1 pl-8">
                         {about ? <RandomFonts>About Me</RandomFonts> : "About Me"}
                     </span>
                 </div>
-                <div onClick={() => scrollTo(refs.projects)} onMouseEnter={() => setProjects(true)} onMouseLeave={() => setProjects(false)} className="transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-50 h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out border-l-4 border-r-4 border-gray-800">
+                <div onClick={() => scrollTo(refs.projects)} onMouseEnter={() => setProjects(true)} onMouseLeave={() => setProjects(false)} className="transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out border-l-4 border-r-4 border-gray-800">
                     <span className="inline-block transform -skew-x-[20deg] text-3xl tracking-widest -translate-y-1">
                         {projects ? <RandomFonts>Projects</RandomFonts> : "Projects"}
                     </span>
                 </div>
-                <div onClick={() => scrollTo(refs.contact)} onMouseEnter={() => setContact(true)} onMouseLeave={() => setContact(false)} className="transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-50 h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out">
+                <div onClick={() => scrollTo(refs.contact)} onMouseEnter={() => setContact(true)} onMouseLeave={() => setContact(false)} className="transform skew-x-[20deg] flex items-center justify-center w-[18vw] min-w-[18vw] h-24 hover:bg-gray-800/40 cursor-pointer transition-colors duration-500 ease-in-out">
                     <span className="inline-block transform -skew-x-[20deg] text-3xl tracking-widest -translate-y-1 pr-8">
                         {contact ? <RandomFonts>Contact</RandomFonts> : "Contact"}
                     </span>
