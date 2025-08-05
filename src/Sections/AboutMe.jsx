@@ -15,8 +15,13 @@ const AboutMe = ({ sectionRef }) => {
         },
         {
             description: "",
-            experience: 3,
-            icon: "./icons/php.png"
+            experience: 4,
+            icon: "./icons/cpp.png"
+        },
+        {
+            description: "",
+            experience: 1,
+            icon: "./icons/python.png"
         }
     ];
 
@@ -35,7 +40,7 @@ const AboutMe = ({ sectionRef }) => {
                 }
             </div>
             <div>
-                The displayed experience is relative to each other.
+                The displayed experience is relative to each other skill.
             </div>
         </section>
     );
