@@ -4,7 +4,7 @@ import skills from "../data/skills.json";
 const AboutMe = ({ sectionRef }) => {
 
     return (
-        <section ref={sectionRef} className="flex flex-col items-center justify-center h-screen snap-start bg-gray-950">
+        <section ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen snap-start bg-gray-950">
             <div className="flex flex-wrap gap-10 justify-center">
                 {
                     skills.map((skill, index) => (
