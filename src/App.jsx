@@ -32,10 +32,16 @@ const App = () => {
 
   return (
     <main className="h-screen overflow-y-scroll font-mono text-white snap-y snap-mandatory no-scrollbar libertinus-sans-regular">
-      <Home refs={{ aboutMe: aboutRef, projects: projectsRef, contact: contactRef}} />
-      <AboutMe sectionRef={aboutRef}/>
-      <section ref={projectsRef} className="h-screen snap-start bg-fuchsia-500">Section 3</section>
-      <section ref={contactRef} className="h-screen border-orange-500 snap-start">Section 4</section>
+      <Home refs={{ aboutMe: aboutRef, projects: projectsRef, contact: contactRef }} />
+      <AboutMe sectionRef={aboutRef} />
+      <section
+        ref={projectsRef}
+        className="flex items-center justify-center w-screen h-screen text-3xl text-center snap-start bg-fuchsia-500"
+      >
+        STAY TUNED FOR MORE
+      </section>
+
+      <section ref={contactRef} className="flex items-center justify-center w-screen h-screen text-3xl text-center bg-orange-500 snap-start">Will finish soon (probably)</section>
     </main>
   );
 }
