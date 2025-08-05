@@ -50,21 +50,23 @@ const Skill = ({ description, experience, icon }) => {
     const experienceDivs = Array.from({ length: 5 }, (_, i) => (
         <div
             key={i}
-            style={{ backgroundColor: i < experience ? averageColor : 'transparent'  }}
-            className="w-5 h-5 m-1 border-gray-700 rounded-full border-3"
+            style={{ backgroundColor: i < experience ? averageColor : 'transparent' }}
+            className="w-5 h-5 m-1 border-gray-800 rounded-full border-3"
         />
     ));
 
     return (
-        <div className="relative flex flex-col items-center justify-center h-64 p-4 overflow-hidden text-center transition-colors duration-500 ease-in-out border-4 border-gray-800 cursor-default w-45 bg-gray-800/40 rounded-2xl hover:bg-gray-300/20 group">
+        <div className="relative flex flex-col items-center justify-center h-55 p-4 overflow-hidden text-center transition-colors duration-500 ease-in-out border-4 border-gray-800 cursor-default w-45 bg-gray-500/10   0 rounded-2xl hover:bg-gray-300/20 group">
 
             <div className="z-10 flex flex-col items-center justify-center text-center">
-                <img src={icon} alt="" className="max-h-35" />
+                <div className='h-30 flex justify-center items-center'>
+                    <img src={icon} alt="" className="max-h-35" />
+                </div>
                 <div className="flex flex-row justify-center mt-5">
                     {experienceDivs}
                 </div>
             </div>
-            
+
             <div className="absolute inset-0 z-20 flex items-center justify-center text-white transition-transform duration-500 translate-x-full group-hover:translate-x-0 bg-gray-700/60">
                 {
                     description
